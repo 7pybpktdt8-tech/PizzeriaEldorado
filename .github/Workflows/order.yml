@@ -8,20 +8,10 @@ jobs:
   send_order:
     runs-on: ubuntu-latest
     steps:
-      - name: Estrai dati ordine
-        run: |
-          echo "Nome: ${{ github.event.client_payload.nome }}" >> order.txt
-          echo "Indirizzo: ${{ github.event.client_payload.indirizzo }}" >> order.txt
-          echo "Ordine: ${{ github.event.client_payload.ordine }}" >> order.txt
-          echo "Orario: ${{ github.event.client_payload.orario }}" >> order.txt
-          echo "Ora ricezione: ${{ github.event.client_payload.timestamp }}" >> order.txt
-          echo "" >> order.txt
-          cat order.txt
-
       - name: Invia ordine a Telegram
         run: |
           MESSAGE="🍕 *Nuovo ordine ricevuto!*%0A%0A👤 Nome: ${{ github.event.client_payload.nome }}%0A🏠 Indirizzo: ${{ github.event.client_payload.indirizzo }}%0A🧾 Ordine: ${{ github.event.client_payload.ordine }}%0A🕒 Orario: ${{ github.event.client_payload.orario }}%0A📅 Ricevuto: ${{ github.event.client_payload.timestamp }}"
-          
+
           curl -s -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
           -d "chat_id=${{ secrets.TELEGRAM_CHAT_ID }}" \
           -d "text=$MESSAGE" \
