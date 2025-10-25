@@ -5,6 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pizzeria ElDorado 🍕</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #fff8f0; margin: 0; color: #333; text-align: center; }
+    header { background: #d63031; color: white; padding: 2em 1em; }
+    .logo { width: 120px; border-radius: 50%; margin-bottom: 1em; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+    h1, h2 { color: #d63031; }
+    section { padding: 2em 1em; max-width: 700px; margin: auto; text-align: left; }
+    .menu-item { margin-bottom: 1em; border-bottom: 1px solid #eee; padding-bottom: .5em; }
+    .price { float: right; color: #27ae60; font-weight: bold; }
+    footer { background: #222; color: white; padding: 1.5em; font-size: 0.9em; text-align: center; }
+    .btn { background: #27ae60; color: white; padding: 0.8em 1.2em; border-radius: 6px; text-decoration: none; display: inline-block; margin-top: 1em; }
+    .ordine input, .ordine textarea { width: 95%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; border-radius: 6px; }
+    button { background: #27ae60; color: white; border: none; padding: 10px 18px; border-radius: 6px; font-weight: bold; cursor: pointer; }
+    button:hover { background: #219150; }
+  </style>
 </head>
 <body>
 
@@ -14,33 +28,52 @@
     <p>Asporto e consegna a domicilio</p>
   </header>
 
-  <section class="menu">
-    <h2>Menu</h2>
+  <section id="special">
+    <h2>Menù Eldorado Special 🍕</h2>
+    <div class="menu-item">Sfiziosa — <span class="price">€10.00</span><br>mozzarella, burrata(7), capocollo di Martina, cipolla fritta, olive taggiasche</div>
+    <div class="menu-item">Imperiale — <span class="price">€10.00</span><br>pomodoro, mozzarella(7), capocollo di Martina, burrata(7), 'nduja, taralli sbriciolati</div>
+    <div class="menu-item">Divina — <span class="price">€8.00</span><br>mozzarella(7), mortadella(1)(7), olive taggiasche, provola piccante(7)</div>
+    <div class="menu-item">La Rodrigo — <span class="price">€8.00</span><br>pomodoro, mozzarella(7), salame piccante, 'nduja, peperoncino, olive taggiasche</div>
+    <div class="menu-item">La Porchetta — <span class="price">€9.00</span><br>mozzarella(7), porchetta, patate fritte(1), scamorza affumicata(7)</div>
+  </section>
 
-    <div class="item">
-      <strong>Margherita</strong> – €6.00<br>
-      <small>Pomodoro, mozzarella, basilico fresco</small>
-    </div>
+  <section id="classiche">
+    <h2>Menù Classiche 🍕</h2>
+    <div class="menu-item">Margherita — <span class="price">€4.50</span><br>Pomodoro, mozzarella(7)</div>
+    <div class="menu-item">Diavola — <span class="price">€7.00</span><br>Pomodoro, mozzarella(7), salame piccante</div>
+    <div class="menu-item">Capricciosa — <span class="price">€7.50</span><br>Pomodoro, mozzarella(7), carciofi, funghi, olive</div>
+    <div class="menu-item">4 Formaggi — <span class="price">€7.50</span><br>Pomodoro, mozzarella(7), gorgonzola(7), grana(7), scamorza(7)</div>
+    <div class="menu-item">Crudo e Grana — <span class="price">€7.50</span><br>Pomodoro, mozzarella(7), grana(7), prosciutto crudo</div>
+  </section>
 
-    <div class="item">
-      <strong>Diavola</strong> – €7.00<br>
-      <small>Pomodoro, mozzarella, salame piccante</small>
-    </div>
+  <section id="pucce">
+    <h2>Pucce Eldorado 🥪</h2>
+    <div class="menu-item">Lussuria — <span class="price">€5.00</span><br>Porchetta, cipolla agrodolce, patate(1), provola piccante(7), rucola</div>
+    <div class="menu-item">Kebab — <span class="price">€5.00</span><br>Kebab, patate(1), insalata</div>
+    <div class="menu-item">Superbia — <span class="price">€6.00</span><br>Tonno(4), mortadella(1)(7), provola(7), giardiniera(9)(12)</div>
+  </section>
 
-    <div class="item">
-      <strong>Capricciosa</strong> – €8.00<br>
-      <small>Pomodoro, mozzarella, prosciutto, funghi, carciofi</small>
-    </div>
+  <section id="fritture">
+    <h2>Fritture 🍟</h2>
+    <div class="menu-item">Patatine medie — <span class="price">€3.50</span></div>
+    <div class="menu-item">Olive ascolane — <span class="price">€3.00</span></div>
+    <div class="menu-item">Crocchette di patate — <span class="price">€3.00</span></div>
+    <div class="menu-item">Fritto misto 16 pezzi + patate — <span class="price">€12.00</span></div>
+  </section>
 
-    <div class="item">
-      <strong>Quattro Formaggi</strong> – €8.00<br>
-      <small>Mozzarella, gorgonzola, fontina, parmigiano</small>
-    </div>
+  <section id="bevande">
+    <h2>Bevande 🥤</h2>
+    <div class="menu-item">Coca Cola 33cl — <span class="price">€2.00</span></div>
+    <div class="menu-item">Coca Zero lattina — <span class="price">€2.50</span></div>
+    <div class="menu-item">Birra Raffo 66cl — <span class="price">€2.50</span></div>
+    <div class="menu-item">Acqua 0,5L — <span class="price">€1.00</span></div>
+  </section>
 
-    <div class="item">
-      <strong>Vegetariana</strong> – €7.50<br>
-      <small>Pomodoro, mozzarella, verdure grigliate</small>
-    </div>
+  <section id="allergeni">
+    <h2>Allergeni ⚠️</h2>
+    <p>1. Cereali con glutine — 2. Crostacei — 3. Uova — 4. Pesce — 5. Arachidi — 6. Soia — 7. Latte e derivati — 8. Frutta a guscio — 9. Sedano — 10. Senape — 11. Semi di sesamo — 12. Anidride solforosa — 13. Lupini — 14. Molluschi</p>
+    <h3>I nostri impasti</h3>
+    <p>Realizzati solo con acqua, olio, farina, lievito e sale.</p>
   </section>
 
   <section class="ordine">
@@ -48,7 +81,7 @@
     <form id="order-form">
       <input type="text" id="nome" placeholder="Nome" required><br>
       <input type="text" id="indirizzo" placeholder="Indirizzo (se consegna)" required><br>
-      <textarea id="ordine" placeholder="Il tuo ordine (es. 1 Margherita, 1 Diavola)" required></textarea><br>
+      <textarea id="ordine" placeholder="Scrivi il tuo ordine (es. 1 Sfiziosa, 1 Coca Cola)" required></textarea><br>
       <input type="text" id="orario" placeholder="Orario desiderato (es. 20:15)" required><br>
       <button type="submit">Invia Ordine</button>
     </form>
@@ -56,12 +89,9 @@
   </section>
 
   <footer>
-    <p>Orari: 18:00 – 23:00 | Tel: 333-0000000</p>
+    <p>Orari: 19:30 – 23:30 | Tel: 333-0000000</p>
     <p>Pagamento alla consegna 💵</p>
-    <p>© 2025 Pizzeria ElDorado</p>
-    <a class="btn" href="https://t.me/PizzeriaEldoradoBot" target="_blank">
-      Chatta con noi su Telegram
-    </a>
+    <a class="btn" href="https://t.me/PizzeriaEldoradoBot" target="_blank">Chatta su Telegram</a>
   </footer>
 
   <script>
@@ -83,8 +113,6 @@
       }
     };
 
-    // 🔹 Usa l'API GitHub per attivare la Action
-    // ATTENZIONE: serve il token GitHub Pages, quindi useremo una richiesta anonima
     const response = await fetch("https://api.github.com/repos/7pybpktdt8-tech/PizzeriaEldorado/dispatches", {
       method: "POST",
       headers: {
@@ -96,10 +124,10 @@
 
     const status = document.getElementById('status');
     if (response.ok) {
-      status.innerText = "✅ Ordine inviato! Ti contatteremo a breve su Telegram.";
+      status.innerText = "✅ Ordine inviato! Ti contatteremo presto su Telegram.";
       document.getElementById('order-form').reset();
     } else {
-      status.innerText = "❌ Errore nell'invio. Riprova tra poco.";
+      status.innerText = "❌ Errore nell'invio. Riprova più tardi.";
     }
   });
   </script>
