@@ -1,136 +1,652 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pizzeria ElDorado 🍕</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pizzeria ElDorado 🍕 - Menù</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    body { font-family: 'Poppins', sans-serif; background: #fff8f0; margin: 0; color: #333; text-align: center; }
-    header { background: #d63031; color: white; padding: 2em 1em; }
-    .logo { width: 120px; border-radius: 50%; margin-bottom: 1em; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
-    h1, h2 { color: #d63031; }
-    section { padding: 2em 1em; max-width: 700px; margin: auto; text-align: left; }
-    .menu-item { margin-bottom: 1em; border-bottom: 1px solid #eee; padding-bottom: .5em; }
-    .price { float: right; color: #27ae60; font-weight: bold; }
-    footer { background: #222; color: white; padding: 1.5em; font-size: 0.9em; text-align: center; }
-    .btn { background: #27ae60; color: white; padding: 0.8em 1.2em; border-radius: 6px; text-decoration: none; display: inline-block; margin-top: 1em; }
-    .ordine input, .ordine textarea { width: 95%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; border-radius: 6px; }
-    button { background: #27ae60; color: white; border: none; padding: 10px 18px; border-radius: 6px; font-weight: bold; cursor: pointer; }
-    button:hover { background: #219150; }
+    /* Stile in-page rapido (puoi mantenere style.css o sovrascriverlo) */
+    :root { --accent: #d63031; --green: #27ae60; --bg: #fff8f0; }
+    body{font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; background:var(--bg); color:#222;}
+    header{background:var(--accent); color:#fff; padding:28px 16px; text-align:center;}
+    .logo{width:110px; height:auto; border-radius:50%; box-shadow:0 6px 18px rgba(0,0,0,0.15); display:block; margin:0 auto 10px;}
+    h1{margin:6px 0 0; font-size:26px;}
+    p.lead{margin:6px 0 0; opacity:0.95;}
+    main{max-width:980px;margin:20px auto;padding:0 16px;}
+    section{background:#fff; border-radius:10px; padding:18px; margin-bottom:16px; box-shadow:0 6px 18px rgba(0,0,0,0.03);}
+    h2{color:var(--accent); margin:0 0 8px; font-size:18px;}
+    .menu-item{padding:10px 0;border-bottom:1px dashed #eee; display:block;}
+    .menu-item:last-child{border-bottom:none;}
+    .item-title{font-weight:700;}
+    .item-desc{display:block;color:#555;margin-top:6px;font-size:14px;line-height:1.35;}
+    .price{float:right;color:var(--green);font-weight:700;}
+    #allergeni p{margin:8px 0 0;font-size:14px;color:#333;}
+    .ordine input, .ordine textarea, .ordine select { width:100%; padding:10px; margin:8px 0; border:1px solid #e0e0e0; border-radius:8px; font-size:15px; }
+    .ordine button { background:var(--green); color:#fff; padding:12px 18px; border:none; border-radius:8px; font-weight:700; cursor:pointer; }
+    footer{background:#222;color:#fff;padding:18px;text-align:center;font-size:14px;}
+    .small-note{font-size:13px;color:#666;margin-top:6px;}
+    @media(min-width:800px){ .item-desc{font-size:15px}}
   </style>
 </head>
 <body>
 
-  <header>
-    <img src="logo.jpeg" alt="Logo Pizzeria ElDorado" class="logo" />
-    <h1>Pizzeria ElDorado</h1>
-    <p>Asporto e consegna a domicilio</p>
-  </header>
+<header>
+  <img src="logo.jpeg" alt="Logo Pizzeria ElDorado" class="logo" />
+  <h1>Pizzeria ElDorado</h1>
+  <p class="lead">Asporto e consegna a domicilio</p>
+</header>
 
-  <section id="special">
-    <h2>Menù Eldorado Special 🍕</h2>
-    <div class="menu-item">Sfiziosa — <span class="price">€10.00</span><br>mozzarella, burrata(7), capocollo di Martina, cipolla fritta, olive taggiasche</div>
-    <div class="menu-item">Imperiale — <span class="price">€10.00</span><br>pomodoro, mozzarella(7), capocollo di Martina, burrata(7), 'nduja, taralli sbriciolati</div>
-    <div class="menu-item">Divina — <span class="price">€8.00</span><br>mozzarella(7), mortadella(1)(7), olive taggiasche, provola piccante(7)</div>
-    <div class="menu-item">La Rodrigo — <span class="price">€8.00</span><br>pomodoro, mozzarella(7), salame piccante, 'nduja, peperoncino, olive taggiasche</div>
-    <div class="menu-item">La Porchetta — <span class="price">€9.00</span><br>mozzarella(7), porchetta, patate fritte(1), scamorza affumicata(7)</div>
+<main>
+
+  <!-- MENÙ ELDORADO - SPECIAL (pagina 1 del PDF) -->
+  <section id="special-1">
+    <h2>Menù Eldorado — Special</h2>
+
+    <div class="menu-item">
+      <span class="item-title">Sfiziosa</span>
+      <span class="price">€10,00</span>
+      <span class="item-desc">mozzarella, burrata (7), capocollo di Martina, cipolla fritta, olive taggiasche.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Imperiale</span>
+      <span class="price">€10,00</span>
+      <span class="item-desc">pomodoro, mozzarella (7), capocollo di Martina, burrata (7), 'nduja, taralli sbriciolati.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Divina</span>
+      <span class="price">€8,00</span>
+      <span class="item-desc">mozzarella (7), mortadella (1)(7), olive taggiasche, provola piccante (7).</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">La Rodrigo</span>
+      <span class="price">€8,00</span>
+      <span class="item-desc">pomodoro, mozzarella (7), salame piccante, 'nduja, peperoncino, olive taggiasche e taralli sbriciolati.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">La Porchetta</span>
+      <span class="price">€9,00</span>
+      <span class="item-desc">mozzarella (7), porchetta, patate fritte (1), scamorza affumicata (7).</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Della Nonna</span>
+      <span class="price">€8,00</span>
+      <span class="item-desc">pomodoro, mozzarella (7), ricotta forte (7), provola piccante (7), polpette fritte (1)(3)(7).</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Kebab & Patate</span>
+      <span class="price">€7,50</span>
+      <span class="item-desc">pomodoro, mozzarella (7), kebab, patate (1).</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Uccelletti & Patate</span>
+      <span class="price">€8,00</span>
+      <span class="item-desc">pomodoro, mozzarella (7), involtini di crudo e fior di latte (7), patate (1).</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">La deliziosa</span>
+      <span class="price">€9,00</span>
+      <span class="item-desc">mozzarella (7), burrata (7), pistacchi (5)(8), mortadella (1)(7).</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Via Roma</span>
+      <span class="price">€9,50</span>
+      <span class="item-desc">pomodoro, mozzarella (7), porchetta, porcini (9)(12), burrata (7).</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Valtellina</span>
+      <span class="price">€8,50</span>
+      <span class="item-desc">pomodoro, mozzarella (7), bresaola, rucola, grana (7).</span>
+    </div>
+
+    <p class="small-note">Nota: i numeretti in rosso sugli ingredienti si riferiscono agli allergeni.</p>
   </section>
 
-  <section id="classiche">
-    <h2>Menù Classiche 🍕</h2>
-    <div class="menu-item">Margherita — <span class="price">€4.50</span><br>Pomodoro, mozzarella(7)</div>
-    <div class="menu-item">Diavola — <span class="price">€7.00</span><br>Pomodoro, mozzarella(7), salame piccante</div>
-    <div class="menu-item">Capricciosa — <span class="price">€7.50</span><br>Pomodoro, mozzarella(7), carciofi, funghi, olive</div>
-    <div class="menu-item">4 Formaggi — <span class="price">€7.50</span><br>Pomodoro, mozzarella(7), gorgonzola(7), grana(7), scamorza(7)</div>
-    <div class="menu-item">Crudo e Grana — <span class="price">€7.50</span><br>Pomodoro, mozzarella(7), grana(7), prosciutto crudo</div>
+  <!-- MENÙ ELDORADO - Special (pagina 2) -->
+  <section id="special-2">
+    <h2>Menù Eldorado — Special (continua)</h2>
+
+    <div class="menu-item">
+      <span class="item-title">Purgatorio</span>
+      <span class="price">€7,50</span>
+      <span class="item-desc">pomodoro, mozzarella (7), friarielli, acciughe (4), taralli sbriciolati (1)(9)(10)(11).</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Inferno</span>
+      <span class="price">€7,50</span>
+      <span class="item-desc">pomodoro, mozzarella (7), friarielli, 'nduja, tonno (4).</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">La dolce vita</span>
+      <span class="price">€9,50</span>
+      <span class="item-desc">mozzarella (7), capocollo di Martina, burrata (7), pesto, noci (1)(3)(4)(5)(6)(8)(9)(10)(11)(12).</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">La bufalina</span>
+      <span class="price">€7,50</span>
+      <span class="item-desc">pomodoro, bufala (7).</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Spagnola</span>
+      <span class="price">€7,00</span>
+      <span class="item-desc">pomodoro, mozzarella (7), cipolla, salame piccante, zucchine, origano.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Golosa</span>
+      <span class="price">€8,00</span>
+      <span class="item-desc">pomodoro, mozzarella (7), salsiccia fresca (3)(7), radicchio, grana (7), gorgonzola (7).</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Pestata</span>
+      <span class="price">€6,00</span>
+      <span class="item-desc">mozzarella (7), pesto, noci (5)(8), grana (7).</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Invidia</span>
+      <span class="price">€7,00</span>
+      <span class="item-desc">pomodoro, mozzarella (7), capperi, pomodori secchi, burrata (7).</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Zingara</span>
+      <span class="price">€8,00</span>
+      <span class="item-desc">mozzarella (7), salame piccante, pomodorini, olive, peperoni.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Rustica</span>
+      <span class="price">€7,00</span>
+      <span class="item-desc">mozzarella, pomodorini, olive, capperi, cipolla.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Pistacia</span>
+      <span class="price">€7,50</span>
+      <span class="item-desc">pomodoro, mozzarella (7), pistacchi (5)(8), porcini (9)(12).</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Sylla</span>
+      <span class="price">€8,00</span>
+      <span class="item-desc">mozzarella (7), scamorza (7), salsiccia fresca (3)(7), datterino rosso, cipolla fritta.</span>
+    </div>
+
+    <p class="small-note">Nota: i numeretti in rosso sugli ingredienti si riferiscono agli allergeni.</p>
   </section>
 
-  <section id="pucce">
-    <h2>Pucce Eldorado 🥪</h2>
-    <div class="menu-item">Lussuria — <span class="price">€5.00</span><br>Porchetta, cipolla agrodolce, patate(1), provola piccante(7), rucola</div>
-    <div class="menu-item">Kebab — <span class="price">€5.00</span><br>Kebab, patate(1), insalata</div>
-    <div class="menu-item">Superbia — <span class="price">€6.00</span><br>Tonno(4), mortadella(1)(7), provola(7), giardiniera(9)(12)</div>
+  <!-- MENÙ ELDORADO - Special (pagina 3) -->
+  <section id="special-3">
+    <h2>Menù Eldorado — Special (continua)</h2>
+
+    <div class="menu-item">
+      <span class="item-title">Honorata</span>
+      <span class="price">€8,00</span>
+      <span class="item-desc">pomodoro, mozzarella (7), burrata (7), capocollo di Martina, rucola.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Pugliese</span>
+      <span class="price">€8,00</span>
+      <span class="item-desc">pomodoro, mozzarella (7), salsiccia fresca (3)(7), provola piccante (7), friarielli.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">California</span>
+      <span class="price">€7,50</span>
+      <span class="item-desc">pomodoro, mozzarella (7), grana (7), speck, olive.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Pirata</span>
+      <span class="price">€7,50</span>
+      <span class="item-desc">pomodoro, mozzarella (7), gorgonzola (7), pancetta, radicchio.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Bomba</span>
+      <span class="price">€7,50</span>
+      <span class="item-desc">pomodoro, mozzarella (7), salame piccante, ricotta forte (7), provola piccante (7), rucola.</span>
+    </div>
+
+    <p class="small-note">Nota: i numeretti in rosso sugli ingredienti si riferiscono agli allergeni.</p>
   </section>
 
-  <section id="fritture">
-    <h2>Fritture 🍟</h2>
-    <div class="menu-item">Patatine medie — <span class="price">€3.50</span></div>
-    <div class="menu-item">Olive ascolane — <span class="price">€3.00</span></div>
-    <div class="menu-item">Crocchette di patate — <span class="price">€3.00</span></div>
-    <div class="menu-item">Fritto misto 16 pezzi + patate — <span class="price">€12.00</span></div>
+  <!-- MENÙ ELDORADO - CLASSICHE -->
+  <section id="classiche-full">
+    <h2>Menù Eldorado — Classiche</h2>
+
+    <div class="menu-item">
+      <span class="item-title">Margherita</span>
+      <span class="price">€4,50</span>
+      <span class="item-desc">Pomodoro, mozzarella (7).</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Capricciosa</span>
+      <span class="price">€7,50</span>
+      <span class="item-desc">Pomodoro, mozzarella (7), carciofi (7)(8)(9), funghi freschi, olive.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Diavola</span>
+      <span class="price">€7,00</span>
+      <span class="item-desc">Pomodoro, mozzarella (7), salame piccante.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Ortolana</span>
+      <span class="price">€7,50</span>
+      <span class="item-desc">Pomodoro, mozzarella (7), zucchine, peperoni, melanzane.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Caprese</span>
+      <span class="price">€7,00</span>
+      <span class="item-desc">Pomodorini, fior di latte (7), grana (7), rucola.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Napoli</span>
+      <span class="price">€6,00</span>
+      <span class="item-desc">Pomodoro, mozzarella (7), acciughe (4), origano, capperi.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">4 Stagioni</span>
+      <span class="price">€8,00</span>
+      <span class="item-desc">Pomodoro, mozzarella (7), cotto, carciofi (7)(8)(9), salame piccante, funghi freschi.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Fumè</span>
+      <span class="price">€7,50</span>
+      <span class="item-desc">Pomodoro, mozzarella (7), scamorza (7), speck.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Tonno e Cipolla</span>
+      <span class="price">€6,50</span>
+      <span class="item-desc">Pomodoro, mozzarella (7), tonno (4), cipolla.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Boscaiola</span>
+      <span class="price">€7,50</span>
+      <span class="item-desc">Pomodoro, mozzarella (7), cotto, funghi freschi, panna (7).</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">America</span>
+      <span class="price">€7,50</span>
+      <span class="item-desc">Pomodoro, mozzarella (7), wurstel (1), patate.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Crudo e Grana</span>
+      <span class="price">€7,00</span>
+      <span class="item-desc">Pomodoro, mozzarella (7), grana (7), prosciutto crudo.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">4 Formaggi</span>
+      <span class="price">€7,50</span>
+      <span class="item-desc">Pomodoro, mozzarella (7), svizzero (7), grana (7), scamorza (7), gorgonzola (7).</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Gola</span>
+      <span class="price">€5,50</span>
+      <span class="item-desc">Pomodoro, mozzarella (7), noci (5)(8), gorgonzola (7).</span>
+    </div>
+
+    <!-- altra parte classiche -->
+    <div class="menu-item">
+      <span class="item-title">Crudaiola</span>
+      <span class="price">€8,00</span>
+      <span class="item-desc">Datterino rosso, fior di latte (7), grana (7), rucola, crudo, olio evo.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">SuperOrtolana</span>
+      <span class="price">€8,50</span>
+      <span class="item-desc">Pomodoro, mozzarella (7), zucchine, melanzane, peperoni, funghi freschi, carciofi (7)(8)(9).</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Eldorado</span>
+      <span class="price">€7,50</span>
+      <span class="item-desc">Pomodoro, mozzarella (7), scamorza affumicata (7), pancetta e rucola.</span>
+    </div>
+
+    <p class="small-note">Nota: i numeretti in rosso sugli ingredienti si riferiscono agli allergeni.</p>
   </section>
 
-  <section id="bevande">
-    <h2>Bevande 🥤</h2>
-    <div class="menu-item">Coca Cola 33cl — <span class="price">€2.00</span></div>
-    <div class="menu-item">Coca Zero lattina — <span class="price">€2.50</span></div>
-    <div class="menu-item">Birra Raffo 66cl — <span class="price">€2.50</span></div>
-    <div class="menu-item">Acqua 0,5L — <span class="price">€1.00</span></div>
+  <!-- CALZONI E PANZEROTTI AL FORNO -->
+  <section id="calzoni-panzerotti">
+    <h2>Calzoni e Panzerotti al Forno</h2>
+
+    <div class="menu-item">
+      <span class="item-title">Calzone Margherita</span>
+      <span class="price">€4,50</span>
+      <span class="item-desc">Pomodoro, mozzarella (7).</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Calzone Conquistadores</span>
+      <span class="price">€6,00</span>
+      <span class="item-desc">Pomodoro, mozzarella (7), olive, cotto e salame piccante.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Panzerotto al forno</span>
+      <span class="price">€2,50</span>
+      <span class="item-desc">Pomodoro, mozzarella (7).</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Panzerotto rustico</span>
+      <span class="price">€3,00</span>
+      <span class="item-desc">Pomodoro, mozzarella (7), cipolla, olive.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Golosone</span>
+      <span class="price">€2,00</span>
+      <span class="item-desc">Pasta pizza, wurstel (1).</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Classico</span>
+      <span class="price">€2,00</span>
+      <span class="item-desc">Pomodoro, mozzarella (7).</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Barbarossa</span>
+      <span class="price">€3,00</span>
+      <span class="item-desc">Pomodoro, mozzarella (7), ricotta forte (7), capperi.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Super</span>
+      <span class="price">€3,00</span>
+      <span class="item-desc">Pomodoro, mozzarella (7), salsiccia fresca (3)(7), friarielli.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">America (panzerotto)</span>
+      <span class="price">€3,00</span>
+      <span class="item-desc">Wurstel (1), patatine (1).</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Santiago</span>
+      <span class="price">€3,50</span>
+      <span class="item-desc">Pomodoro, mozzarella (7), mortadella (1)(7), provola piccante (7).</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Nutella</span>
+      <span class="price">€3,50</span>
+      <span class="item-desc">Nutella e zucchero a velo.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Kebab</span>
+      <span class="price">€3,50</span>
+      <span class="item-desc">Kebab e patate (1).</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Peccato</span>
+      <span class="price">€12,00</span>
+      <span class="item-desc">Capocollo, burrata (7), rucola.</span>
+    </div>
+
+    <p class="small-note">Nota: i numeretti in rosso sugli ingredienti si riferiscono agli allergeni.</p>
   </section>
 
+  <!-- PUCCE -->
+  <section id="pucce-full">
+    <h2>Pucce Eldorado</h2>
+
+    <div class="menu-item">
+      <span class="item-title">Nakon</span>
+      <span class="price">€5,00</span>
+      <span class="item-desc">Tonno (4), mortadella (1)(7), fior di latte (7), pomodori secchi e provola piccante (7).</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Lussuria</span>
+      <span class="price">€5,00</span>
+      <span class="item-desc">Porchetta, cipolla agrodolce, patate (1), provola piccante (7), rucola.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Perla Nera</span>
+      <span class="price">€5,00</span>
+      <span class="item-desc">Tonno (4), melanzane, svizzero (7), rucola, pomodori secchi, salame piccante.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Kebab (p.u.c.c.a.)</span>
+      <span class="price">€5,00</span>
+      <span class="item-desc">Kebab, patate (1), insalata.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Dolce/Piccante</span>
+      <span class="price">€5,00</span>
+      <span class="item-desc">Tonno (4), cotto, svizzero (7), salame dolce o piccante, insalata.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Casa</span>
+      <span class="price">€5,00</span>
+      <span class="item-desc">Tonno (4), pomodoro, fior di latte (7), cotto, svizzero (7), rucola.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Maya</span>
+      <span class="price">€5,00</span>
+      <span class="item-desc">Pomodoro, fior di latte (7), carciofi (7)(8)(9), zucchine, rucola.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Incas</span>
+      <span class="price">€5,00</span>
+      <span class="item-desc">Wurstel (1) e patatine (1).</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Uccelletti & Patate</span>
+      <span class="price">€6,50</span>
+      <span class="item-desc">Involtini di crudo e fior di latte (1) e patate (1).</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Sant'Angelo</span>
+      <span class="price">€5,00</span>
+      <span class="item-desc">Tonno (4), capocollo di Martina, burrata (7), pomodori secchi, rucola.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Cotoletta & Patate</span>
+      <span class="price">€6,00</span>
+      <span class="item-desc">Cotoletta, patate (1), insalata e pomodoro.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Superbia</span>
+      <span class="price">€5,00</span>
+      <span class="item-desc">Tonno (4), mortadella (1)(7), provola piccante (7), giardiniera (9)(12), salame piccante, rucola.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Vegetariana (p.u.c.c.a.)</span>
+      <span class="price">€5,00</span>
+      <span class="item-desc">Pomodoro, zucchine, melanzane, peperoni, carciofi (7)(8)(9), rucola.</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Ira</span>
+      <span class="price">€7,00</span>
+      <span class="item-desc">Polpette (1)(3)(7), 'nduja, provola piccante (7), rucola, burrata (7), patate (7).</span>
+    </div>
+
+    <div class="menu-item">
+      <span class="item-title">Accidia</span>
+      <span class="price">€6,00</span>
+      <span class="item-desc">Porchetta, funghi sott'olio, burrata (7), melanzane fritte, radicchio.</span>
+    </div>
+
+    <p class="small-note">Nota: i numeretti in rosso sugli ingredienti si riferiscono agli allergeni.</p>
+  </section>
+
+  <!-- FRITTURE -->
+  <section id="fritture-full">
+    <h2>Fritture</h2>
+
+    <div class="menu-item"><span class="item-title">Patatina media</span><span class="price">€3,50</span></div>
+    <div class="menu-item"><span class="item-title">Patatina grande</span><span class="price">€5,00</span></div>
+    <div class="menu-item"><span class="item-title">Olive ascolane</span><span class="price">€3,00</span></div>
+    <div class="menu-item"><span class="item-title">Crocchette di patate</span><span class="price">€3,00</span></div>
+    <div class="menu-item"><span class="item-title">Panzerottini</span><span class="price">€3,50</span></div>
+    <div class="menu-item"><span class="item-title">Polpette di melanzane</span><span class="price">€3,00</span></div>
+    <div class="menu-item"><span class="item-title">Polpette di carne</span><span class="price">€3,50</span></div>
+    <div class="menu-item"><span class="item-title">Pepite di pollo</span><span class="price">€3,50</span></div>
+    <div class="menu-item"><span class="item-title">Chele di granchio</span><span class="price">€3,50</span></div>
+    <div class="menu-item"><span class="item-title">Jalapenos</span><span class="price">€3,50</span></div>
+    <div class="menu-item"><span class="item-title">Fritto misto 16 pezzi + patate</span><span class="price">€12,00</span></div>
+
+  </section>
+
+  <!-- BEVANDE -->
+  <section id="bevande-full">
+    <h2>Bevande</h2>
+
+    <div class="menu-item"><span class="item-title">Coca Cola 33 cl</span><span class="price">€2,00</span></div>
+    <div class="menu-item"><span class="item-title">Coca Cola 1L</span><span class="price">€3,00</span></div>
+    <div class="menu-item"><span class="item-title">Coca Zero lattina 33 cl</span><span class="price">€2,50</span></div>
+    <div class="menu-item"><span class="item-title">Fanta 33 cl</span><span class="price">€2,00</span></div>
+    <div class="menu-item"><span class="item-title">Tè pesca/limone 33 cl</span><span class="price">€2,50</span></div>
+    <div class="menu-item"><span class="item-title">Becks 33 cl</span><span class="price">€2,50</span></div>
+    <div class="menu-item"><span class="item-title">Acqua 0,5 L</span><span class="price">€1,00</span></div>
+    <div class="menu-item"><span class="item-title">Raffo 33 cl</span><span class="price">€2,00</span></div>
+    <div class="menu-item"><span class="item-title">Raffo 66 cl</span><span class="price">€2,50</span></div>
+    <div class="menu-item"><span class="item-title">Heineken 66 cl</span><span class="price">€3,50</span></div>
+    <div class="menu-item"><span class="item-title">Ceres 33 cl</span><span class="price">€3,50</span></div>
+    <div class="menu-item"><span class="item-title">Corona 33 cl</span><span class="price">€3,50</span></div>
+    <div class="menu-item"><span class="item-title">Tennent's 33 cl</span><span class="price">€3,50</span></div>
+    <div class="menu-item"><span class="item-title">Peroni 66 cl</span><span class="price">€3,00</span></div>
+  </section>
+
+  <!-- ALLERGENI + IMPIASTI -->
   <section id="allergeni">
-    <h2>Allergeni ⚠️</h2>
-    <p>1. Cereali con glutine — 2. Crostacei — 3. Uova — 4. Pesce — 5. Arachidi — 6. Soia — 7. Latte e derivati — 8. Frutta a guscio — 9. Sedano — 10. Senape — 11. Semi di sesamo — 12. Anidride solforosa — 13. Lupini — 14. Molluschi</p>
+    <h2>Allergeni</h2>
+    <p>1. CEREALI CON GLUTINE — 2. CROSTACEI — 3. UOVA — 4. PESCE — 5. ARACHIDI — 6. SOIA — 7. LATTE E DERIVATI — 8. FRUTTA A GUSCIO — 9. SEDANO — 10. SENAPE — 11. SEMI DI SESAMO — 12. ANIDRIDE SOLFOROSA — 13. LUPINI — 14. MOLLUSCHI</p>
+
     <h3>I nostri impasti</h3>
-    <p>Realizzati solo con acqua, olio, farina, lievito e sale.</p>
+    <p>I nostri impasti sono realizzati solo con acqua, olio, farina, lievito e sale.</p>
   </section>
 
-  <section class="ordine">
+  <!-- ORDINE -->
+  <section class="ordine" id="order-section">
     <h2>Ordina Ora 🍕</h2>
     <form id="order-form">
-      <input type="text" id="nome" placeholder="Nome" required><br>
-      <input type="text" id="indirizzo" placeholder="Indirizzo (se consegna)" required><br>
-      <textarea id="ordine" placeholder="Scrivi il tuo ordine (es. 1 Sfiziosa, 1 Coca Cola)" required></textarea><br>
-      <input type="text" id="orario" placeholder="Orario desiderato (es. 20:15)" required><br>
-      <button type="submit">Invia Ordine</button>
+      <input type="text" id="nome" placeholder="Nome (es. Mario Rossi)" required />
+      <input type="text" id="telefono" placeholder="Telefono (es. 333-0000000)" required />
+      <input type="text" id="indirizzo" placeholder="Indirizzo (se consegna) - es. Via Roma 10" />
+      <textarea id="ordine" placeholder="Scrivi il tuo ordine (es. 1 Sfiziosa, 1 Coca Cola 33cl)" required></textarea>
+      <label for="orario" class="small-note" style="display:block;margin-top:6px;">Orario desiderato</label>
+      <input type="text" id="orario" placeholder="Orario desiderato (es. 20:15)" required />
+      <div style="margin-top:10px;">
+        <button type="submit">Invia Ordine</button>
+      </div>
     </form>
     <p id="status"></p>
+    <p class="small-note">Riceverai una conferma su Telegram. Pagamento alla consegna.</p>
   </section>
 
-  <footer>
-    <p>Orari: 19:30 – 23:30 | Tel: 333-0000000</p>
-    <p>Pagamento alla consegna 💵</p>
-    <a class="btn" href="https://t.me/PizzeriaEldoradoBot" target="_blank">Chatta su Telegram</a>
-  </footer>
+</main>
 
-  <script>
-  document.getElementById('order-form').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const nome = document.getElementById('nome').value;
-    const indirizzo = document.getElementById('indirizzo').value;
-    const ordine = document.getElementById('ordine').value;
-    const orario = document.getElementById('orario').value;
+<footer>
+  <p>Orari: 18:00 – 23:00 | Tel: 333-0000000</p>
+  <p>© 2025 Pizzeria ElDorado</p>
+  <p><a href="https://t.me/PizzeriaEldoradoBot" target="_blank" style="color:#fff;text-decoration:underline;">Chatta con noi su Telegram</a></p>
+</footer>
 
-    const data = {
-      event_type: "new_order",
-      client_payload: {
-        nome,
-        indirizzo,
-        ordine,
-        orario,
-        timestamp: new Date().toISOString()
-      }
-    };
+<script>
+/*
+  Invio ordine via repository_dispatch:
+  Nota: GitHub Pages NON permette chiamate anonime a /dispatches (CORS e autenticazione).
+  Per sicurezza e funzionamento: usa il bridge (Replit/Cloudflare Worker) oppure un Personal Access Token per test locali.
+  Qui è incluso il fetch verso l'endpoint GitHub - se il browser riceve un errore, significa che devi usare il bridge.
+*/
 
-    const response = await fetch("https://api.github.com/repos/7pybpktdt8-tech/PizzeriaEldorado/dispatches", {
+document.getElementById('order-form').addEventListener('submit', async function(e){
+  e.preventDefault();
+  const nome = document.getElementById('nome').value.trim();
+  const telefono = document.getElementById('telefono').value.trim();
+  const indirizzo = document.getElementById('indirizzo').value.trim();
+  const ordine = document.getElementById('ordine').value.trim();
+  const orario = document.getElementById('orario').value.trim();
+
+  const payload = {
+    event_type: "new_order",
+    client_payload: {
+      nome, telefono, indirizzo, ordine, orario,
+      timestamp: new Date().toISOString()
+    }
+  };
+
+  // Endpoint dispatch del repo (se usi bridge sostituisci con il suo URL)
+  const DISPATCH_URL = "https://api.github.com/repos/7pybpktdt8-tech/PizzeriaEldorado/dispatches";
+
+  try {
+    const resp = await fetch(DISPATCH_URL, {
       method: "POST",
       headers: {
         "Accept": "application/vnd.github+json",
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
+        // non inserire token qui (deve essere gestito da bridge o test locale)
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(payload)
     });
 
     const status = document.getElementById('status');
-    if (response.ok) {
-      status.innerText = "✅ Ordine inviato! Ti contatteremo presto su Telegram.";
+    if (resp.ok) {
+      status.innerText = "✅ Ordine inviato! Controlla la conferma su Telegram.";
       document.getElementById('order-form').reset();
     } else {
-      status.innerText = "❌ Errore nell'invio. Riprova più tardi.";
+      // Leggi il codice errore per debug
+      const text = await resp.text();
+      console.error("Dispatch error:", resp.status, text);
+      status.innerText = "❌ Errore nell'invio. Se stai usando GitHub Pages, è normale: serve un bridge (Replit/Worker). Contattami e te lo preparo."
     }
-  });
-  </script>
+  } catch (err) {
+    console.error(err);
+    document.getElementById('status').innerText = "❌ Errore di rete. Riprova più tardi.";
+  }
+});
+</script>
 
 </body>
 </html>
