@@ -3,30 +3,138 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Pizzeria ElDorado 🍕 - Menù</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Pizzeria ElDorado 🍕</title>
+
+  <!-- FONT + ICONS -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
   <style>
-    /* Stile in-page rapido (puoi mantenere style.css o sovrascriverlo) */
-    :root { --accent: #d63031; --green: #27ae60; --bg: #fff8f0; }
-    body{font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; background:var(--bg); color:#222;}
-    header{background:var(--accent); color:#fff; padding:28px 16px; text-align:center;}
-    .logo{width:110px; height:auto; border-radius:50%; box-shadow:0 6px 18px rgba(0,0,0,0.15); display:block; margin:0 auto 10px;}
-    h1{margin:6px 0 0; font-size:26px;}
-    p.lead{margin:6px 0 0; opacity:0.95;}
-    main{max-width:980px;margin:20px auto;padding:0 16px;}
-    section{background:#fff; border-radius:10px; padding:18px; margin-bottom:16px; box-shadow:0 6px 18px rgba(0,0,0,0.03);}
-    h2{color:var(--accent); margin:0 0 8px; font-size:18px;}
-    .menu-item{padding:10px 0;border-bottom:1px dashed #eee; display:block;}
-    .menu-item:last-child{border-bottom:none;}
-    .item-title{font-weight:700;}
-    .item-desc{display:block;color:#555;margin-top:6px;font-size:14px;line-height:1.35;}
-    .price{float:right;color:var(--green);font-weight:700;}
-    #allergeni p{margin:8px 0 0;font-size:14px;color:#333;}
-    .ordine input, .ordine textarea, .ordine select { width:100%; padding:10px; margin:8px 0; border:1px solid #e0e0e0; border-radius:8px; font-size:15px; }
-    .ordine button { background:var(--green); color:#fff; padding:12px 18px; border:none; border-radius:8px; font-weight:700; cursor:pointer; }
-    footer{background:#222;color:#fff;padding:18px;text-align:center;font-size:14px;}
-    .small-note{font-size:13px;color:#666;margin-top:6px;}
-    @media(min-width:800px){ .item-desc{font-size:15px}}
+    :root {
+      --red: #d63031;
+      --gold: #ffcc70;
+      --cream: #fff8f0;
+      --green: #27ae60;
+      --dark: #1e1e1e;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      text-align: center;
+      padding: 2.5em 1em 1.5em;
+      background: linear-gradient(135deg, var(--red), #ff5252);
+      color: white;
+      position: relative;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    header .logo {
+      width: 110px;
+      height: auto;
+      border-radius: 50%;
+      border: 3px solid var(--gold);
+      box-shadow: 0 0 10px rgba(255,255,255,0.4);
+      margin-bottom: 10px;
+      animation: pulse 3s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    .lead { opacity: 0.9; margin: 5px 0 0; }
+
+    nav.nav-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 10px;
+      border-bottom: 1px solid #eee;
+    }
+
+    nav.nav-buttons a {
+      background: var(--red);
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    nav.nav-buttons a:hover {
+      background: var(--green);
+    }
+
+    section {
+      background: #fff;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      max-width: 900px;
+      transition: transform 0.2s;
+    }
+
+    section:hover {
+      transform: scale(1.01);
+    }
+
+    h2 {
+      color: var(--red);
+      border-left: 5px solid var(--gold);
+      padding-left: 10px;
+    }
+
+    .menu-item {
+      border-bottom: 1px dashed #eee;
+      padding: 10px 0;
+    }
+
+    .menu-item:last-child { border-bottom: none; }
+    .price { float: right; color: var(--green); font-weight: 600; }
+    .item-desc { font-size: 14px; color: #444; }
+
+    .ordine button {
+      background: var(--green);
+      color: white;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .ordine button:hover {
+      background: #219150;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: var(--dark);
+      color: #fff;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
@@ -38,10 +146,10 @@
 </header>
 <nav class="nav-buttons">
   <a href="#special-1">🍕 Pizze Special</a>
-  <a href="#classiche-full" Classiche</a>
-  <a href="#calzoni-full" Calzoni</a>
+  <a href="#classiche-full"> Classiche</a>
+  <a href="#calzoni-full"> Calzoni</a>
   <a href="#pucce-full">🥪 Pucce</a>
-  <a href="#fritture-full" Fritture</a>
+  <a href="#fritture-full"> Fritture</a>
   <a href="#bevande-full">🥤 Bevande</a>
 </nav>
 <main>
